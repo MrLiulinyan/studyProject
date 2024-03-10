@@ -1,0 +1,13 @@
+* {
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation;
+}
+
+body {
+    font-family: "Microsoft YaHei", "微软雅黑", Arial, Verdana, Helvetica, "PingFang SC", "Hiragino Sans GB", sans-serif;
+    background-color: #ffffff;
+    font-size: 16px;
+    color: #333;
+    max-width: 100%;
+    height: 100%;
+}
