@@ -7,7 +7,7 @@
     "start": "npm run dev",
     "dev": "npx webpack serve --config ./webpack.dev.js",
     "prod": "npx webpack serve --config ./webpack.prod.js",
-    "build": "npx webpack --config ./webpack.dev.js"
+    "build": "npx webpack --config ./webpack.prod.js"
   },
   "author": "刘林雁",
   "license": "ISC",

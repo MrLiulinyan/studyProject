@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
+    clean: true, // 清除dist文件夹
   }, // 输出
   module: {
     rules:[
@@ -24,10 +25,6 @@ module.exports = {
         use:["vue-loader"]
       }
     ],
-    generator:{
-      asset:''
-      // filename: "static/images/[hash:8][ext][query]",
-    }
   }, // 模块
   plugins: [
     new HtmlWebpackPlugin({
@@ -39,7 +36,7 @@ module.exports = {
   ], // 插件
   devServer: {
     host: "127.0.0.1", // 主机
-    port: 8085, // 端口
+    //port: 8085, // 端口
     open: true, // 自动打开浏览器
     hot: true, // 热更新
   }, // 开发服务器
