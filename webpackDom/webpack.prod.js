@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: "production", // 模式
@@ -14,14 +15,14 @@ module.exports = {
     rules:[
       {
         test: /\.css$/, // 匹配 .css结尾文件
-        use: ["style-loader", "css-loader"], // use 数组里面 Loader 执行顺序是从右到左
-        generator: {
-            filename: "css/[hash:8][ext][query]",
-          },
+        use: [MiniCssExtractPlugin.loader, "css-loader"], // use 数组里面 Loader 执行顺序是从右到左
+        // generator: {
+        //     filename: "css/[hash:8][ext][query]",
+        //   },
       },
       {
         test: /\.less$/,
-        use:["style-loader", "css-loader", "less-loader"]
+        use:[MiniCssExtractPlugin.loader, "css-loader", "less-loader"]
       },
       {
         test: /\.vue$/,
@@ -51,6 +52,18 @@ module.exports = {
           filename: "fonts/[hash:8][ext][query]",
         },
       },
+      {
+        test: /\.(map4|map3|avi)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "media/[hash:8][ext][query]",
+        },
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/, // 排除node_modules代码不编译
+        loader: "babel-loader",
+      },
     ],
   }, // 模块
   plugins: [
@@ -59,7 +72,11 @@ module.exports = {
       // 新的html文件有两个特点：1. 内容和源文件一致 2. 自动引入打包生成的js等资源
       template: path.resolve(__dirname, "public/index.html"),
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      // 定义输出文件名和目录
+      filename: "css/main.css",
+    })
   ], // 插件
   resolve: {}, // 解析
   optimization: {}, // 优化

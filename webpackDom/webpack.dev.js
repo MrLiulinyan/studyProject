@@ -1,6 +1,20 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader");
+const ESLintWebpackPlugin = require("eslint-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
+const postcssLoader = {
+  loader: "postcss-loader",
+  options: {
+    postcssOptions: {
+      plugins: [
+        "postcss-preset-env", // 能解决大多数样式兼容性问题
+      ],
+    },
+  },
+};
 
 module.exports = {
   mode: "development", // 模式
@@ -11,19 +25,29 @@ module.exports = {
     clean: true, // 清除dist文件夹
   }, // 输出
   module: {
-    rules:[
+    rules: [
       {
         test: /\.css$/, // 匹配 .css结尾文件
-        use: ["style-loader", "css-loader"], // use 数组里面 Loader 执行顺序是从右到左
+        use: [MiniCssExtractPlugin.loader, "css-loader", postcssLoader], // use 数组里面 Loader 执行顺序是从右到左
       },
       {
         test: /\.less$/,
-        use:["style-loader", "css-loader", "less-loader"]
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          postcssLoader,
+          "less-loader",
+        ],
       },
       {
         test: /\.vue$/,
-        use:["vue-loader"]
-      }
+        use: ["vue-loader"],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/, // 排除node_modules代码不编译
+        loader: "babel-loader",
+      },
     ],
   }, // 模块
   plugins: [
@@ -32,10 +56,19 @@ module.exports = {
       // 新的html文件有两个特点：1. 内容和源文件一致 2. 自动引入打包生成的js等资源
       template: path.resolve(__dirname, "public/index.html"),
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new ESLintWebpackPlugin({
+      // 指定检查文件的根目录
+      context: path.resolve(__dirname, "src"),
+    }),
+    new CssMinimizerPlugin(),
+    new MiniCssExtractPlugin({
+      // 定义输出文件名和目录
+      filename: "css/main.css",
+    })
   ], // 插件
   devServer: {
-    host: "127.0.0.1", // 主机
+    // host: "http://localhost", // 主机
     //port: 8085, // 端口
     open: true, // 自动打开浏览器
     hot: true, // 热更新
