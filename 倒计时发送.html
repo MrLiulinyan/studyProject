@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+	</body>
+	<script>
+		const getCodeText = '重新发送'
+
+		function getSignMessage() {
+			const time = () => {
+				let t = 180
+				this.getCodeText = t + 's'
+				let s = setInterval(() => {
+					this.getCodeText = t-- + 's'
+					console.log(this.getCodeText)
+					if (t < 0) {
+						this.getCodeText = '重新发送'
+						clearInterval(s)
+					}
+				}, 1000)
+			}
+			return time()
+		}
+		getSignMessage()
+	</script>
+</html>

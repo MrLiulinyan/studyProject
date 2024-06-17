@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>防抖与节流</title>
+	</head>
+	<body>
+		<div id="btn1">防抖事件</div>
+		<div id="btn2">节流事件</div>
+		<script>
+			const btn1 = document.getElementById('btn1');
+			const btn2 = document.getElementById('btn2');
+			
+			const debounce = function(callback,time){
+				let timer = null
+				return function(){
+					if(timer) clearTimeout(timer)
+					timer = setTimeout(()=>{
+						callback.call(this,...arguments)
+						// callback();
+					},time)
+				}
+			}
+			btn1.onclick = debounce(function(){
+				console.log(11111,this)
+			},100)
+			// 节流
+			const throttle = function(callback, time) {
+				let startTime = null
+				return function() {
+					const clickTime = new Date().getTime();
+					if (clickTime - startTime > time) {
+						callback.call(this,...arguments)
+						// callback()
+						startTime = new Date().getTime()
+					}
+				}
+			}
+			btn2.onclick = throttle(function() {
+				console.log(2222,this)
+			}, 5000)
+		</script>
+	</body>
+</html>
