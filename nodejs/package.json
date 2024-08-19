@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "serve": "nodemon index.js",
+    "dev": "nodemon run.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "express-session": "^1.17.3",
+    "formidable": "^3.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1"
+  }
+}

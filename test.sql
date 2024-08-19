@@ -1,0 +1,11 @@
+-- SELECT * FROM USERS
+-- SELECT * FROM users WHERE status='0' AND id<2 
+-- SELECT * FROM users WHERE status='0' OR id<2
+-- SELECT * FROM users ORDER BY id
+-- SELECT * FROM users ORDER BY id DESC
+SELECT COUNT(*) AS total FROM users WHERE id
+-- SELECT username,password FROM users
+-- INSERT INTO users (username,password) VALUES ('liu','123456')
+-- UPDATE users SET password='888888' WHERE id=2
+-- 删除 users表 id为2的用户数据 WHERE子句不加则删除整个表
+-- DELETE FROM users WHERE id='2' 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		function getUrlParams(url) {
+		  const params = {};
+		  const reg = /([^\?|&])+=[^&]*/g; 
+		  const res = url.match(reg); 
+		  res.forEach(str=>{
+			  const param = str.split('=');
+			  params[param[0]] = param[1]
+		  })
+		  return params;
+		}
+		const path = 'http://localhost:8080/school/class?schoolNumber=1&classNumber=100&name=张三'
+		const params = getUrlParams(path);
+	</script>
+</html>

@@ -1,0 +1,31 @@
+.app-container{
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
+.main-container{
+  width: calc(100% - 124px);
+  height: 100%;
+}
+
+.ant-tabs-card.ant-tabs-top >.ant-tabs-nav .ant-tabs-tab{
+  border-radius:unset;
+  border: none;
+  background-color: unset;
+}
+
+.ant-tabs-card >.ant-tabs-nav .ant-tabs-tab-active{
+  background-color: #f8f9fb !important;
+
+  & .ant-tabs-tab-btn{
+    color: #409eff;
+  }
+}
+
+.content-view{
+  width: 100%;
+  height: calc(100% - 40px);
+  background-color: #f1f1f1;
+  box-sizing: border-box;
+}

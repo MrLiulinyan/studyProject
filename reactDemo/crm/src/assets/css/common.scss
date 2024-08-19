@@ -1,0 +1,429 @@
+* {
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation;
+}
+
+body {
+  font-family: 'Microsoft YaHei', '微软雅黑', Arial, Verdana, Helvetica, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  background-color: #fff;
+  font-size: $font-size-primary;
+  color: $font-color;
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+:focus {
+  outline: none;
+}
+
+.scroll-container {
+  padding-right: 5px;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar-thumb {
+    background: #fff;
+    box-shadow: none;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    box-shadow: 0 0 10px inset rgb(0 0 0 / 20%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #c7c7c7;
+  box-shadow: 0 0 10px inset rgb(0 0 0 / 20%);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: #fff;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+input[type='number'] {
+  appearance: none;
+}
+
+// 文本超出省略号
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// 字体、文本颜色
+.font-lg{
+  font-size: 18px;
+}
+
+.font-primary {
+  font-size: 16px;
+}
+
+.font-small {
+  font-size: 14px;
+}
+
+.font-mini {
+  font-size: 12px;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.font-500 {
+  font-weight: 500;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+// 弹性布局样式
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-shrink {
+  flex-shrink: 0;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-around {
+  justify-content: space-around;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-align-end {
+  align-items: flex-end;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+// margin
+.margin-mini {
+  margin: $margin-mini !important;
+}
+
+.margin-small {
+  margin: $margin-small;
+}
+
+.margin-primary {
+  margin: $margin-primary;
+}
+
+.margin-vertical {
+  margin-top: $margin-primary;
+  margin-bottom: $margin-primary;
+}
+
+.margin-vertical-lg {
+  margin-top: $margin-lg;
+  margin-bottom: $margin-lg;
+}
+
+.margin-vertical-small {
+  margin-top: $margin-small;
+  margin-bottom: $margin-small;
+}
+
+.margin-vertical-mini {
+  margin-top: $margin-mini;
+  margin-bottom: $margin-mini;
+}
+
+.margin-horizontal {
+  margin-left: $margin-primary;
+  margin-right: $margin-primary;
+}
+
+.margin-horizontal-lg {
+  margin-left: $margin-lg;
+  margin-right: $margin-lg;
+}
+
+.margin-horizontal-small {
+  margin-left: $margin-small;
+  margin-right: $margin-small;
+}
+
+.margin-horizontal-mini {
+  margin-left: $margin-mini;
+  margin-right: $margin-mini;
+}
+
+.margin-top {
+  margin-top: $margin-primary;
+}
+
+.margin-top-lg {
+  margin-top: $margin-lg;
+}
+
+.margin-top-small {
+  margin-top: $margin-small !important;
+}
+
+.margin-top-mini {
+  margin-top: $margin-mini;
+}
+
+.margin-bottom {
+  margin-bottom: $margin-primary;
+}
+
+.margin-bottom-lg {
+  margin-bottom: $margin-lg;
+}
+
+.margin-bottom-small {
+  margin-bottom: $margin-small !important;
+}
+
+.margin-bottom-mini {
+  margin-bottom: $margin-mini;
+}
+
+.margin-left {
+  margin-left: $margin-primary;
+}
+
+.margin-left-lg {
+  margin-left: $margin-lg;
+}
+
+.margin-left-small {
+  margin-left: $margin-small !important;
+}
+
+.margin-left-mini {
+  margin-left: $margin-mini !important;
+}
+
+.margin-right {
+  margin-right: $margin-primary;
+}
+
+.margin-right-lg {
+  margin-right: $margin-lg;
+}
+
+.margin-right-small {
+  margin-right: $margin-small;
+}
+
+.margin-right-mini {
+  margin-right: $margin-mini;
+}
+
+.margin-top-0 {
+  margin-top: 0 !important;
+}
+
+.margin-left-0 {
+  margin-left: 0 !important;
+}
+
+.margin-right-0 {
+  margin-right: 0 !important;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0 !important;
+}
+
+// padding
+
+.padding-small {
+  padding: $padding-small;
+}
+
+.padding-mini {
+  padding: $padding-mini;
+}
+
+.padding-primary {
+  padding: $padding-primary;
+}
+
+.padding-top {
+  padding-top: $padding-primary;
+}
+
+.padding-top-lg {
+  padding-top: $padding-lg;
+}
+
+.padding-top-small {
+  padding-top: $padding-small;
+}
+
+.padding-top-mini {
+  padding-top: $padding-mini;
+}
+
+.padding-bottom {
+  padding-bottom: $padding-primary;
+}
+
+.padding-bottom-lg {
+  padding-bottom: $padding-lg;
+}
+
+.padding-bottom-small {
+  padding-bottom: $padding-small;
+}
+
+.padding-bottom-mini {
+  padding-bottom: $padding-mini;
+}
+
+.padding-left {
+  padding-left: $padding-primary;
+}
+
+.padding-left-lg {
+  padding-left: $padding-lg;
+}
+
+.padding-left-small {
+  padding-left: $padding-small;
+}
+
+.padding-left-mini {
+  padding-left: $padding-mini;
+}
+
+.padding-left-0 {
+  padding-left: 0 !important;
+}
+
+.padding-right {
+  padding-right: $padding-primary;
+}
+
+.padding-right-lg {
+  padding-right: $padding-lg;
+}
+
+.padding-right-small {
+  padding-right: $padding-small;
+}
+
+.padding-right-mini {
+  padding-right: $padding-mini;
+}
+
+.padding-horizontal {
+  padding-right: $padding-primary;
+  padding-left: $padding-primary;
+}
+
+.padding-horizontal-lg {
+  padding-right: $padding-lg;
+  padding-left: $padding-lg;
+}
+
+.padding-horizontal-small {
+  padding-right: $padding-small;
+  padding-left: $padding-small;
+}
+
+.padding-horizontal-mini {
+  padding-right: $padding-mini;
+  padding-left: $padding-mini;
+}
+
+.padding-vertical {
+  padding-top: $padding-primary;
+  padding-bottom: $padding-primary;
+}
+
+.padding-vertical-lg {
+  padding-top: $padding-lg;
+  padding-bottom: $padding-lg;
+}
+
+.padding-vertical-small {
+  padding-top: $padding-small;
+  padding-bottom: $padding-small;
+}
+
+.padding-vertical-mini {
+  padding-top: $padding-mini;
+  padding-bottom: $padding-mini;
+}
+
+.padding-right-0 {
+  padding-right: 0;
+}
+
+.padding-bottom-0 {
+  padding-bottom: 0;
+}
+
+.padding-0{
+  padding: 0 !important;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}

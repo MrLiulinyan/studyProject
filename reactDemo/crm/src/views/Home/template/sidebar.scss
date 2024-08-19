@@ -1,0 +1,62 @@
+.sidebar {
+  width: 124px;
+  height: 100%;
+  background-color: #fff;
+  border-right: 1px solid #ebeef5;
+  box-sizing: border-box;
+  padding-top: 40px;
+  cursor: context-menu;
+}
+
+.ant-dropdown-menu-item:hover{
+    background-color: #ecf5ff !important;
+    color: #66b1ff !important;
+}
+
+.sidebar-menu {
+  width: 100%;
+
+  .menu-item {
+    width: 100%;
+    height: 56px;
+    box-sizing: border-box;
+    transition: all .3s ease-in;
+    font-size: 14px;
+
+    &:hover,&.active{
+        background-color: #e5f1ff;
+
+        span{
+            color: #409eff;
+        }
+    }
+
+    .iconfont {
+      font-size: 20px;
+    }
+
+    .icon-column {
+      color: #5ab9f7 !important;
+    }
+
+    .icon-fensi111 {
+      color: #68d75e !important;
+    }
+
+    .icon-xiaoshou {
+      color: #ffb940 !important;
+    }
+
+    .icon-marketing {
+      color: #e5595e !important;
+    }
+
+    .icon-tongji {
+      color: #aedaff !important;
+    }
+
+    .icon-more {
+      color: #4372f8 !important;
+    }
+  }
+}

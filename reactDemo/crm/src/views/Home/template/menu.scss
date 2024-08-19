@@ -1,0 +1,19 @@
+.content-item{
+    width: 420px;
+
+    .line{
+        margin: 10px 0;
+    }
+
+    .list-item{
+        background-color: #f7f7f7;
+        padding: 5px 0;
+        width: 120px;
+        margin: 6px 10px;
+
+        &:hover{
+            background-color: #66b1ff;
+            color: #fff;
+        }
+    }
+}
